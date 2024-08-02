@@ -10,7 +10,7 @@
 
 
  ' {% endcomment %}
-
+<p> {{ 'text' | t }}</p>
 
  <h1>{{ section.settings.text }}</h1>
 
@@ -36,8 +36,21 @@
     ],
     "presets": [
         {"name": "Default custom section", "settings": {
-            "text": "Default text"
-        }},
+            "text": "default text"
+        },
+    "blocks": [
+        {
+            "type": "paragraph"
+        },
+        {
+            "type": "social",
+            "settings": {
+                "url": "httpsL//twitter.com",
+                "text": "Twitter"
+
+            }
+        }
+    ]},
         { "name": "Red custom section","settings": {
         "text": "Red text"
     }}
@@ -48,7 +61,6 @@
     "blocks": [
         {
             "type": "@app"
-
         },
         {
             "name": "Social link",
@@ -79,7 +91,100 @@
             ]
         }
     ],
-    "max_blocks": 3
+    "max_blocks": 3,
+    "locales": {
+        "en": {
+            "text": "Hello"
+        },
+        "es": {
+            "text": "Hola"
+        }
+    }
 
 }
 {% endschema %}
+
+
+{% comment %} {
+    "name": "Custom Section", 
+    "settings:": [
+        {
+        "type": "text",
+        "id": "text",
+        "label": "Text"
+        }
+    ], 
+    "presets": [
+        {
+            "name": "Default custom section",
+            "settings": {
+            "text": "default text"
+            },
+            "blocks": [
+                {
+            "type": "paragraph"
+                }, 
+                {
+                "type": "social", 
+                "settings": {
+                "url": "https://twitter.com"}/, 
+                "text": "Twitter"
+                }
+        ]
+        }, 
+        {"name": "Red custom section" ,
+        "settings": {
+            "text": "red text"
+            }
+        },
+    ], 
+    "tag": "header", 
+    "class": "custom-section",
+    "limit": 1,
+    "blocks": [
+        {
+        "type": "@app"
+        },
+        {
+            "name": "Social Link", 
+            "type": "social", 
+            "settings": [
+                {
+                "type": "text", 
+                "id" : "text", 
+                "label": "Text"
+            }, 
+            {
+                "type": "url", 
+                "id" : "url", 
+                "label": "URL"
+            }, 
+            ]
+        }, 
+        [
+            {
+                "name": "Paragraph", 
+                "type": "paragraph", 
+                "settings": [
+                    {
+                    "type": "textarea", 
+                    "id" : "text", 
+                    "label": "Text"
+                }
+                ]
+            }
+        ]
+    ], 
+    "max_blocks": 3,
+    "locales": {
+        "en": {
+        "text": "Hello"
+        }, 
+        "es": {
+        "text": "Hola"
+        }
+    }
+
+}
+{% endschema %}
+ {% endcomment %}
